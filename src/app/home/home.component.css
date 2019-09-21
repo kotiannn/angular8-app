@@ -1,0 +1,28 @@
+.text-center{
+    text-align:center;
+}
+
+.button{
+  
+    background-color: #008CBA;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 35px;
+    width: 90px;
+
+    cursor: pointer;
+      
+}
+.customdrpDown{
+    background: white; 
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+}
+
+

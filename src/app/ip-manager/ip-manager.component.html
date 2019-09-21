@@ -1,0 +1,29 @@
+<h4 style="margin-left: 35px;"><a [routerLink] = "''">Back</a></h4>
+<div class="container"  [hidden]='currenttype==null'>
+  <h3>Current Plan is : {{currentPlan}}</h3>
+  <div class="panel panel-default">
+    <div class="panel-body">
+            <div class="" *ngFor="let item of ipCollection; let pointIndex=index; last as isLast; first as isFirst">
+              
+                    <input class="ip-text" type = "text" 
+                    (keyup) = 'isValidIP(item)'
+                    placeholder = "Enter IP Address" 
+                    [(ngModel)]="item.ip" 
+                    ngDefaultControl>
+                 
+                  <button type="button"  (click)="deleteIpaddr(pointIndex)" class="button" title="Remove">
+                    <img  src="assets/remove.png">
+                  </button>
+                  <button type="button" [disabled]="enableAddbtn()" (click)="addIpAddr(item.ip)" *ngIf="isLast" class="button" title="Add">
+                    <img src="assets/add.png">
+                  </button>
+                  <div class="invalidspn mb-1" ngDefaultControl [(ngModel)]="item.valid" *ngIf="!isValidIP(item)">{{invaliderrormsg}}</div>
+            </div>
+            <div class="btn-footer mt-2">
+               <button class="save-btn" (click)="onSaveIPCollection()" [disabled]='isSaveValid()'>Save</button>
+            </div>
+           
+  
+    </div>
+  </div>
+</div>
