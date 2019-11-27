@@ -11,10 +11,10 @@
                     [(ngModel)]="item.ip" 
                     ngDefaultControl>
                  
-                  <button type="button"  (click)="deleteIpaddr(pointIndex)" class="button" title="Remove">
+                  <button type="button" [hidden]="checkCollection(isFirst)" (click)="deleteIpaddr(pointIndex)" class="button" title="Remove">
                     <img  src="assets/remove.png">
                   </button>
-                  <button type="button" [disabled]="enableAddbtn()" (click)="addIpAddr(item.ip)" *ngIf="isLast" class="button" title="Add">
+                  <button type="button"  (click)="addIpAddr(item.ip)" class="button" title="Add">
                     <img src="assets/add.png">
                   </button>
                   <div class="invalidspn mb-1" ngDefaultControl [(ngModel)]="item.valid" *ngIf="!isValidIP(item)">{{invaliderrormsg}}</div>
