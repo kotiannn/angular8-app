@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IpManagerComponent } from './ip-manager.component';
+// Import module
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('IpManagerComponent', () => {
   let component: IpManagerComponent;
@@ -8,9 +11,10 @@ describe('IpManagerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IpManagerComponent ]
+      declarations: [IpManagerComponent],
+      imports: [FormsModule, RouterTestingModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,10 +23,9 @@ describe('IpManagerComponent', () => {
     fixture.detectChanges();
   });
 
- 
   it('Is IP Address Error message defined and valid', async(() => {
     const app = fixture.debugElement.componentInstance;
     expect(app.invaliderrormsg).toEqual('Please enter a valid IP address');
   }));
-  
+
 });

@@ -6,21 +6,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IpManagerComponent } from './ip-manager/ip-manager.component';
 import { HomeComponent } from './home/home.component';
-
+import { RouterModule} from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
     IpManagerComponent,
     HomeComponent,
-    
-  ],
+    ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
- 
-  ],
+    RouterModule
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })
